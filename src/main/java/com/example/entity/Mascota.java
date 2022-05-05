@@ -18,6 +18,7 @@ public class Mascota {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
 	@Column(name = "codmascota")
+	
 	private int codmascota;
 	
 	@Basic(optional = false)
@@ -35,10 +36,6 @@ public class Mascota {
 	@ManyToOne
 	@JoinColumn(name = "codpropietario")
 	private Propietario codpropietario;
-	
-	@ManyToOne
-	@JoinColumn(name = "coddepartamento")
-	private Departamento coddepartamento;
 	
 
 	public int getCodmascota() {
@@ -80,15 +77,6 @@ public class Mascota {
 	public void setCodpropietario(Propietario codpropietario) {
 		this.codpropietario = codpropietario;
 	}
-
-	public Departamento getCoddepartamento() {
-		return coddepartamento;
-	}
-
-	public void setCoddepartamento(Departamento coddepartamento) {
-		this.coddepartamento = coddepartamento;
-	}
-	
 	
 	
 }
