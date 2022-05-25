@@ -18,6 +18,14 @@ public class Constantes {
     public static final String MENSAJE_DEPARTAMENTO_ERROR_REGISTRAR = "No se Registro Departamento, Verifique los datos.";
 
 
+	public static final String MENSAJE_USUARIO_YAEXISTE = "Ya existe dicho Usuario.";
+	public static final String MENSAJE_USUARIO_YAEXISTEDNI = "Ya existe dicho DNI de Usuario.";
+	public static final String MENSAJE_USUARIO_REGISTRADO = "Se Registro al Usuario Existosamente.";
+	public static final String MENSAJE_USUARIO_ACTUALIZADO = "Se Actualizo al Propietario Existosamente.";
+	public static final String MENSAJE_USUARIO_ELIMINADO = "Se Elimino al Usuario Exitosamente.";
+	public static final String MENSAJE_USUARIO_ERROR_REGISTRAR = "No se Registro al Usuario, Verifique los datos.";
+   
+    
 	public static final String MENSAJE_VISITANTE_YAEXISTE = "Ya existe dicho Visitante.";
     public static final String MENSAJE_VISITANTE_REGISTRADO = "Se Registro Visitante Existosamente.";
     public static final String MENSAJE_VISITANTE_ACTUALIZADO = "Se Actualizo Visitante Existosamente.";
