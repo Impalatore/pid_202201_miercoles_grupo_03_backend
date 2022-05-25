@@ -6,11 +6,13 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,7 +57,27 @@ public class VisitanteController {
 		return ResponseEntity.ok(salida);
 	}
 		
-	
+	@GetMapping("/listaVisitanteConParametros")
+	@ResponseBody
+	public ResponseEntity<Map<String, Object>> listaVisitanteDni(
+			@RequestParam(name = "dni", required = true) String dni){
+		Map<String, Object> salida = new HashMap<>();
+		try {
+			List<Visitante> lista = service.listaVisitantePorDNI(dni);
+			if(CollectionUtils.isEmpty(lista)) {
+				salida.put("mensaje", "No existe dicho Visitante con DNI: "+dni+" Registrarse nuevamente");
+			}else {
+				salida.put("lista", lista);
+				salida.put("mensaje", "Existe dicho Visitante con DNI "+dni);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			salida.put("mensaje", Constantes.MENSAJE_VISITANTE_ERROR_REGISTRAR);
+		}
+		
+		return ResponseEntity.ok(salida);
+	}
 	
 	
 }

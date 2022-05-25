@@ -26,4 +26,9 @@ public class VisitanteImpl implements VisitanteService{
 		return repositoryV.findAll();
 	}
 
+	@Override
+	public List<Visitante> listaVisitantePorDNI(String dni) {
+		// TODO Auto-generated method stub
+		return repositoryV.listaVisitantePorDNI(dni);
+	}
 }
