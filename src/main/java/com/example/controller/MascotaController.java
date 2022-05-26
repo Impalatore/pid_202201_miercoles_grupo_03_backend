@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,6 +54,29 @@ public class MascotaController {
 		
 		return ResponseEntity.ok(salida);
 	}
+	
+	@GetMapping("/ListaMascota")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> ListaMascotas(){
+        Map<String, Object> salida = new HashMap<>();
+
+        try {
+            List<Mascota> lista = service.ListaMascotas();
+            if(CollectionUtils.isEmpty(lista)) {
+                salida.put("mensaje", "No existen datos para mostrar");
+            }else {
+                salida.put("lista", lista);
+                salida.put("mensaje", "Existen " + lista.size() + " para mostrar");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            salida.put("mensaje", Constantes.MENSAJE_MASCOTA_ERROR_REGISTRAR);
+        }
+
+        return ResponseEntity.ok(salida);
+
+    }
 	
 	
 

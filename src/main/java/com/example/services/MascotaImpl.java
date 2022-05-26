@@ -25,5 +25,11 @@ public class MascotaImpl implements MascotaService{
 		// TODO Auto-generated method stub
 		return repositoryM.findAll();
 	}
+	
+	@Override
+    public List<Mascota> ListaMascotas() {
+        // TODO Auto-generated method stub
+        return repositoryM.ListaMascotas();
+    }
 
 }
