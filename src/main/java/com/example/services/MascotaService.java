@@ -9,4 +9,6 @@ public interface MascotaService {
 	public abstract Mascota inserta(Mascota obj);
 	
 	public abstract List<Mascota> listaMascota();
+	
+	public List<Mascota> ListaMascotas();
 }

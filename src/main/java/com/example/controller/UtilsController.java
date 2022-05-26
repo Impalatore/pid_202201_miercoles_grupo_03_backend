@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Departamento;
 import com.example.entity.Edificio;
+import com.example.entity.Mascota;
 import com.example.entity.Propietario;
 import com.example.entity.Usuario;
+import com.example.entity.Visitante;
 import com.example.services.DepartamentoService;
 import com.example.services.EdificioService;
+import com.example.services.MascotaService;
 import com.example.services.PropietarioService;
 import com.example.services.UsuarioService;
+import com.example.services.VisitanteService;
 
 @RestController
 @RequestMapping("/rest/util")
@@ -35,6 +39,12 @@ public class UtilsController {
 	
 	@Autowired
 	private DepartamentoService departamentoService;
+	
+	@Autowired
+	private MascotaService mascotaService;
+	
+	@Autowired
+	private VisitanteService visitanteService;
 	
 	//  Combo Box Usuario para Formulario Departamento, Propietario, Visitante
 	@GetMapping("/usuario")
@@ -69,5 +79,19 @@ public class UtilsController {
 	}
 	
 	
-	
+	//Lista de Mascota para la Tabla M. en el Formulario M.
+    @GetMapping("/mascota")
+    @ResponseBody
+    public ResponseEntity<List<Mascota>> listaMascota(){
+        List<Mascota> listam = mascotaService.listaMascota();
+        return ResponseEntity.ok(listam);
+    }
+
+	//Combo Box Visitante para Formulario Visita
+    @GetMapping("/visitante")
+    @ResponseBody
+    public ResponseEntity<List<Visitante>> listaVisitante(){
+        List<Visitante> listav = visitanteService.listaVisitante();
+        return ResponseEntity.ok(listav);
+    }
 }
