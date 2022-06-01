@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,12 +15,14 @@ import com.example.entity.Departamento;
 import com.example.entity.Edificio;
 import com.example.entity.Mascota;
 import com.example.entity.Propietario;
+import com.example.entity.Ubigeo;
 import com.example.entity.Usuario;
 import com.example.entity.Visitante;
 import com.example.services.DepartamentoService;
 import com.example.services.EdificioService;
 import com.example.services.MascotaService;
 import com.example.services.PropietarioService;
+import com.example.services.UbigeoService;
 import com.example.services.UsuarioService;
 import com.example.services.VisitanteService;
 
@@ -45,6 +48,9 @@ public class UtilsController {
 	
 	@Autowired
 	private VisitanteService visitanteService;
+	
+	@Autowired
+	private UbigeoService ubigeoService;
 	
 	//  Combo Box Usuario para Formulario Departamento, Propietario, Visitante
 	@GetMapping("/usuario")
@@ -94,4 +100,22 @@ public class UtilsController {
         List<Visitante> listav = visitanteService.listaVisitante();
         return ResponseEntity.ok(listav);
     }
+    @GetMapping("/listaDepartamentos")
+	@ResponseBody
+	public List<String> listaDepartamentos() {
+		return ubigeoService.listaDepartamentos();
+	}
+
+	@GetMapping("/listaProvincias/{paramDep}")
+	@ResponseBody
+	public List<String> listaProvincias(@PathVariable("paramDep") String dep) {
+		return ubigeoService.listaProvincias(dep);
+	}
+
+	@GetMapping("/listaDistritos/{paramDep}/{paramProv}")
+	@ResponseBody
+	public List<Ubigeo> listaDistritos(@PathVariable("paramDep") String dep, @PathVariable("paramProv") String prov) {
+		return ubigeoService.listaDistritos(dep, prov);
+	}
+	
 }
