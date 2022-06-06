@@ -15,6 +15,8 @@ import com.example.repository.UsuarioRepository;
 
 import lombok.extern.apachecommons.CommonsLog;
 
+
+
 @Service
 @CommonsLog
 public class UsuarioSeguridadServiceImpl implements UserDetailsService {
