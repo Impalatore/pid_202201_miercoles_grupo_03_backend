@@ -8,12 +8,7 @@ public interface VisitaService {
 
 	public abstract Visita registra(Visita obj);
 	
-	public abstract Visita actualiza(Visita obj);
-	
 	public abstract List<Visita> listaVisita();
 	
-	public List<Visita> listaVisitaPorVisitanteDepartamento(int codvisitantes, int coddepartamento, int estado);
-	
-	public List<Visita> listaVisitaPorVisitanteEstado( int estado);
-	
+	public abstract List<Visita> listaVisitaxDNINOMBRE(String nombre, String dni);
 }

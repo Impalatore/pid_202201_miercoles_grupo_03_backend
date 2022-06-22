@@ -1,7 +1,7 @@
 package com.example.controller;
 
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,8 +40,8 @@ public class UsuarioController {
 	public  ResponseEntity<Map<String, Object>> insertaActualizaUsuario(@RequestBody Usuario obj){
 		Map<String, Object> salida = new HashMap<>();
 		try {
-			obj.setEstado(true);
-			obj.setFechareg(new Date());
+			//obj.setEstado(true);
+			//obj.setFechareg(new Date());
 			Usuario objSalida = usuarioService.inserta(obj);
 			if (objSalida == null) {
 				salida.put("mensaje", com.example.utils.Constantes.MENSAJE_USUARIO_ERROR_REGISTRAR);

@@ -8,7 +8,7 @@ public class DecoderPassword {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		
 		String password = "sonia2022";
-		String encodedPassword = "$2a$10$zKbda8yGsebOZlN4zQDMgOHPPlpX0MheQqtj9Prp4gzcCBpqUdtya";
+		String encodedPassword = "$2a$10$nzBJPtDG1JkBu3YP.R/pxepMMbkSy5GT5Erw8BYZvQrXJRuA9SG9C";
 		
 		boolean isPasswordMatch = passwordEncoder.matches(password, encodedPassword);
 		System.out.println("Password : " + password + "   isPasswordMatch    : " + isPasswordMatch);

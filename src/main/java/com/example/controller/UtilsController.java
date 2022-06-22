@@ -11,17 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.entity.Boleta;
 import com.example.entity.Departamento;
 import com.example.entity.Edificio;
 import com.example.entity.Mascota;
+import com.example.entity.Pago;
 import com.example.entity.Propietario;
+import com.example.entity.Servicio;
 import com.example.entity.Ubigeo;
 import com.example.entity.Usuario;
 import com.example.entity.Visitante;
+import com.example.services.BoletaService;
 import com.example.services.DepartamentoService;
 import com.example.services.EdificioService;
 import com.example.services.MascotaService;
+import com.example.services.PagoService;
 import com.example.services.PropietarioService;
+import com.example.services.ServicioService;
 import com.example.services.UbigeoService;
 import com.example.services.UsuarioService;
 import com.example.services.VisitanteService;
@@ -51,6 +57,37 @@ public class UtilsController {
 	
 	@Autowired
 	private UbigeoService ubigeoService;
+	
+	@Autowired
+	private BoletaService boletaService;
+	
+	@Autowired
+	private ServicioService servicioService;
+	
+	@Autowired
+	private PagoService pagoService;
+	
+	@GetMapping("/servicio")
+	@ResponseBody
+	public ResponseEntity<List<Servicio>> listaServicio(){
+		List<Servicio> lista = servicioService.listaServicio();
+		return ResponseEntity.ok(lista);
+	}
+	@GetMapping("/pago")
+	@ResponseBody
+	public ResponseEntity<List<Pago>> listaPago(){
+		List<Pago> lista = pagoService.listaxtodos();
+		return ResponseEntity.ok(lista);
+	}
+	
+	
+	@GetMapping("/boleta")
+	@ResponseBody
+	public ResponseEntity<List<Boleta>> listaBoleta(){
+		List<Boleta> lista = boletaService.listaxtodos();
+		return ResponseEntity.ok(lista);
+	}
+	
 	
 	//  Combo Box Usuario para Formulario Departamento, Propietario, Visitante
 	@GetMapping("/usuario")
