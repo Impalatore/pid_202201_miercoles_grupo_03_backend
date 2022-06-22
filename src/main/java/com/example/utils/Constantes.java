@@ -9,6 +9,22 @@ public class Constantes {
 	public static final String MENSAJE_PROPIETARIO_ELIMINADO = "Se Elimino al Propietario Exitosamente.";
 	public static final String MENSAJE_PROPIETARIO_ERROR_REGISTRAR = "No se Registro al Propietario, Verifique los datos.";
 	public static final String MENSAJE_PROPIETARIO_ERROR_ACTUALIZAR = "No se Actualizo Propietario, Verifique los datos.";
+	
+	public static final String MENSAJE_BOLETA_YAEXISTE = "Ya existe dicha Boleta.";
+	public static final String MENSAJE_BOLETA_REGISTRADO = "Se Registro la Boleta Existosamente.";
+	public static final String MENSAJE_BOLETA_ACTUALIZADO = "Se Actualizo la Boleta Existosamente.";
+	public static final String MENSAJE_BOLETA_ELIMINADO = "Se Elimino la Boleta Exitosamente.";
+	public static final String MENSAJE_BOLETA_ERROR_REGISTRAR = "No se Registro la Boleta, Verifique los datos.";
+	public static final String MENSAJE_BOLETA_ERROR_ACTUALIZAR = "No se Actualizo Boleta, Verifique los datos.";
+	public static final String MENSAJE_BOLETA_ERROR = "No se Encontro dicha consulta, Verifique los datos.";
+
+	
+	public static final String MENSAJE_PAGO_YAEXISTE = "Ya existe dicha Pago.";
+	public static final String MENSAJE_PAGO_REGISTRADO = "Se Registro el Pago Existosamente.";
+	public static final String MENSAJE_PAGO_ACTUALIZADO = "Se Actualizo el Pago Existosamente.";
+	public static final String MENSAJE_PAGO_ELIMINADO = "Se Elimino el Pago Exitosamente.";
+	public static final String MENSAJE_PAGO_ERROR_REGISTRAR = "No se Registro el Pago, Verifique los datos.";
+	public static final String MENSAJE_PAGO_ERROR_ACTUALIZAR = "No se Actualizo Pago, Verifique los datos.";
 
 	
 	public static final String MENSAJE_DEPARTAMENTO_YAEXISTE = "Ya existe dicho Departamento.";
@@ -53,4 +69,11 @@ public class Constantes {
 	public static final String MENSAJE_INCIDENTE_ERROR_REGISTRAR = "No se Registro Incidente, Verifique los datos.";
 	public static final String MENSAJE_INCIDENTE_ERROR_ACTUALIZAR = "No se Actualizo Incidente, Verifique los datos.";
 
+	public static final String MENSAJE_ATENCION_INCIDENTE_YAEXISTE = "Ya existe dicha Atencion.";
+	public static final String MENSAJE_ATENCION_INCIDENTE_REGISTRADO = "Se Registro Atencion Existosamente.";
+	public static final String MENSAJE_ATENCION_INCIDENTE_ACTUALIZADO = "Se Actualizo Atención Existosamente.";
+	public static final String MENSAJE_ATENCION_INCIDENTE_ELIMINADO = "Se Elimino Incidente Exitosamente.";
+	public static final String MENSAJE_ATENCION_INCIDENTE_ERROR_REGISTRAR = "No se Registro Atencion, Verifique los datos.";
+	public static final String MENSAJE_ATENCION_INCIDENTE_ERROR_ACTUALIZAR = "No se Actualizo Atencion, Verifique los datos.";
+	
 }
