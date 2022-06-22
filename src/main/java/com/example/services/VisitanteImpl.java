@@ -15,7 +15,7 @@ public class VisitanteImpl implements VisitanteService{
 	VisitanteRepository repositoryV;
 	
 	@Override
-	public Visitante inserta(Visitante obj) {
+	public Visitante insertaActualizaVisitante(Visitante obj) {
 	
 		return repositoryV.save(obj);
 	}
@@ -27,8 +27,10 @@ public class VisitanteImpl implements VisitanteService{
 	}
 
 	@Override
-	public List<Visitante> listaVisitantePorDNI(String dni) {
+	public List<Visitante> listaxDni(String dni) {
 		// TODO Auto-generated method stub
-		return repositoryV.listaVisitantePorDNI(dni);
+		return repositoryV.findByDni(dni);
 	}
+
+
 }
