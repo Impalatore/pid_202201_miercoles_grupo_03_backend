@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import java.sql.Time;
 import java.util.Date;
 
 import javax.persistence.Basic;
@@ -11,6 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Incidente")
@@ -24,7 +31,7 @@ public class Incidente {
 	
 	@Basic(optional = false)
 	@Column(name = "hora")
-	private String hora;
+	private Time hora;
 	
 	@Basic(optional = false)
 	@Column(name = "descripcion")
@@ -32,19 +39,30 @@ public class Incidente {
 	
 	@Basic(optional = false)
 	@Column(name = "estado")
-	private boolean estado;
+	private int estado;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Temporal(TemporalType.TIMESTAMP)
 	@Basic(optional = false)
 	@Column(name = "fechaAtencion")
 	private Date fechaAtencion;
 	
-	@Basic(optional = false)
-	@Column(name = "fechaRegistro")
-	private Date fechaRegistro;
-	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario idUsuario;
+
+	@ManyToOne
+	@JoinColumn(name = "codedificio")
+	private Edificio codedificio;
+	
+	@ManyToOne
+	@JoinColumn(name = "coddepartamento")
+	private Departamento coddepartamento;
+	
+	@ManyToOne
+	@JoinColumn(name = "codcausas")
+	private Causas codcausas;
 
 	public int getCodincidente() {
 		return codincidente;
@@ -54,11 +72,11 @@ public class Incidente {
 		this.codincidente = codincidente;
 	}
 
-	public String getHora() {
+	public Time getHora() {
 		return hora;
 	}
 
-	public void setHora(String hora) {
+	public void setHora(Time hora) {
 		this.hora = hora;
 	}
 
@@ -70,11 +88,11 @@ public class Incidente {
 		this.descripcion = descripcion;
 	}
 
-	public boolean isEstado() {
+	public int getEstado() {
 		return estado;
 	}
 
-	public void setEstado(boolean estado) {
+	public void setEstado(int estado) {
 		this.estado = estado;
 	}
 
@@ -86,14 +104,6 @@ public class Incidente {
 		this.fechaAtencion = fechaAtencion;
 	}
 
-	public Date getFechaRegistro() {
-		return fechaRegistro;
-	}
-
-	public void setFechaRegistro(Date fechaRegistro) {
-		this.fechaRegistro = fechaRegistro;
-	}
-
 	public Usuario getIdUsuario() {
 		return idUsuario;
 	}
@@ -101,7 +111,31 @@ public class Incidente {
 	public void setIdUsuario(Usuario idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
+	public Edificio getCodedificio() {
+		return codedificio;
+	}
+
+	public void setCodedificio(Edificio codedificio) {
+		this.codedificio = codedificio;
+	}
+
+	public Departamento getCoddepartamento() {
+		return coddepartamento;
+	}
+
+	public void setCoddepartamento(Departamento coddepartamento) {
+		this.coddepartamento = coddepartamento;
+	}
+
+	public Causas getCodcausas() {
+		return codcausas;
+	}
+
+	public void setCodcausas(Causas codcausas) {
+		this.codcausas = codcausas;
+	}
+
 	
-	
-	
+
 }

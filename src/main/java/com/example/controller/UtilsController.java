@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.Boleta;
+import com.example.entity.Causas;
 import com.example.entity.Departamento;
 import com.example.entity.Edificio;
 import com.example.entity.Mascota;
@@ -22,6 +23,7 @@ import com.example.entity.Ubigeo;
 import com.example.entity.Usuario;
 import com.example.entity.Visitante;
 import com.example.services.BoletaService;
+import com.example.services.CausaService;
 import com.example.services.DepartamentoService;
 import com.example.services.EdificioService;
 import com.example.services.MascotaService;
@@ -66,6 +68,10 @@ public class UtilsController {
 	
 	@Autowired
 	private PagoService pagoService;
+	
+	// Spring 4
+	@Autowired
+	private CausaService causasService;
 	
 	@GetMapping("/servicio")
 	@ResponseBody
@@ -153,6 +159,15 @@ public class UtilsController {
 	@ResponseBody
 	public List<Ubigeo> listaDistritos(@PathVariable("paramDep") String dep, @PathVariable("paramProv") String prov) {
 		return ubigeoService.listaDistritos(dep, prov);
+	}
+	
+	// SPRING 04
+	// Combo Box Causas para Formulario Incidente
+	@GetMapping("/causas")
+	@ResponseBody
+	public ResponseEntity<List<Causas>> listaCausas(){
+		List<Causas> listac = causasService.listaCausas();
+		return ResponseEntity.ok(listac);		
 	}
 	
 }
