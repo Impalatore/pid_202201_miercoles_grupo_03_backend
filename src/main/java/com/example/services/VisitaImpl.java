@@ -26,10 +26,22 @@ public class VisitaImpl implements VisitaService{
 		return repositoryVisi.findAll();
 	}
 
+	@Override
+	public List<Visita> listaVisitaPorVisitanteDepartamento(int codvisitantes, int coddepartamento, int estado) {
+		// TODO Auto-generated method stub
+		return repositoryVisi.listaVisitaPorVisitanteDepartamento(codvisitantes, coddepartamento, estado);
+	}
 
 	@Override
-	public List<Visita> listaVisitaxDNINOMBRE(String nombre, String dni) {
+	public Visita actualiza(Visita obj) {
 		// TODO Auto-generated method stub
-		return repositoryVisi.listaVisitaporDnixNombre(nombre, dni);
+		return repositoryVisi.save(obj);
 	}
+
+	@Override
+	public List<Visita> listaVisitaPorVisitanteEstado(int estado) {
+		// TODO Auto-generated method stub
+		return repositoryVisi.listaVisitaPorVisitanteEstado( estado);
+	}
+
 }
