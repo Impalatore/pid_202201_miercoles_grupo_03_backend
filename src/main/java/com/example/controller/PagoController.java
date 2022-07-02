@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +31,6 @@ public class PagoController {
 	public  ResponseEntity<Map<String, Object>> insertaActualizaPago(@RequestBody Pago obj){
 		Map<String, Object> salida = new HashMap<>();
 		try {
-			obj.setFechaemision(new Date());
 			Pago objSalida = pagoService.insertaActualizaPago(obj);
 			if (objSalida == null) {
 				salida.put("mensaje", com.example.utils.Constantes.MENSAJE_PAGO_ERROR_REGISTRAR);

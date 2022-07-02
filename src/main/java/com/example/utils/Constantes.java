@@ -69,11 +69,4 @@ public class Constantes {
 	public static final String MENSAJE_INCIDENTE_ERROR_REGISTRAR = "No se Registro Incidente, Verifique los datos.";
 	public static final String MENSAJE_INCIDENTE_ERROR_ACTUALIZAR = "No se Actualizo Incidente, Verifique los datos.";
 
-	public static final String MENSAJE_ATENCION_INCIDENTE_YAEXISTE = "Ya existe dicha Atencion.";
-	public static final String MENSAJE_ATENCION_INCIDENTE_REGISTRADO = "Se Registro Atencion Existosamente.";
-	public static final String MENSAJE_ATENCION_INCIDENTE_ACTUALIZADO = "Se Actualizo Atención Existosamente.";
-	public static final String MENSAJE_ATENCION_INCIDENTE_ELIMINADO = "Se Elimino Incidente Exitosamente.";
-	public static final String MENSAJE_ATENCION_INCIDENTE_ERROR_REGISTRAR = "No se Registro Atencion, Verifique los datos.";
-	public static final String MENSAJE_ATENCION_INCIDENTE_ERROR_ACTUALIZAR = "No se Actualizo Atencion, Verifique los datos.";
-	
 }
